@@ -1,105 +1,344 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-  }
-}
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+ 
+ /* ═══════════════════════════════════════════════════════════════════════
+    DERMACARE DESIGN SYSTEM
+    Medical Luxury Aesthetic with Soft Motion Philosophy
+ ═══════════════════════════════════════════════════════════════════════ */
+ 
+ @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Instrument+Sans:wght@400;500;600;700&display=swap');
+ 
+ @layer base {
+   :root {
+     /* ═══ Core Colors ═══ */
+     --background: 30 20% 98%;
+     --foreground: 200 15% 15%;
+     
+     /* Cream & Ivory Surfaces */
+     --card: 35 25% 97%;
+     --card-foreground: 200 15% 15%;
+     --popover: 30 20% 98%;
+     --popover-foreground: 200 15% 15%;
+     
+     /* Medical Teal - Primary Brand */
+     --primary: 175 35% 35%;
+     --primary-foreground: 30 20% 98%;
+     
+     /* Champagne Gold - Luxury Accent */
+     --secondary: 38 45% 72%;
+     --secondary-foreground: 200 15% 15%;
+     
+     /* Soft Sage - Calm/Wellness */
+     --accent: 150 20% 88%;
+     --accent-foreground: 175 35% 30%;
+     
+     /* Muted Elements */
+     --muted: 30 15% 92%;
+     --muted-foreground: 200 10% 45%;
+     
+     /* System */
+     --destructive: 0 65% 55%;
+     --destructive-foreground: 0 0% 100%;
+     --border: 30 15% 88%;
+     --input: 30 15% 88%;
+     --ring: 175 35% 35%;
+     --radius: 0.75rem;
+     
+     /* ═══ Extended Palette ═══ */
+     --cream: 35 30% 95%;
+     --ivory: 40 25% 97%;
+     --champagne: 38 45% 72%;
+     --champagne-light: 38 50% 85%;
+     --teal-deep: 175 40% 25%;
+     --teal-medium: 175 35% 35%;
+     --teal-light: 175 30% 50%;
+     --sage: 150 20% 75%;
+     --sage-light: 150 20% 88%;
+     --charcoal: 200 15% 15%;
+     --slate: 200 10% 45%;
+     
+     /* ═══ Gradients ═══ */
+     --gradient-hero: linear-gradient(
+       135deg,
+       hsl(175 35% 35% / 0.05) 0%,
+       hsl(38 45% 72% / 0.08) 50%,
+       hsl(150 20% 88% / 0.1) 100%
+     );
+     --gradient-medical: linear-gradient(
+       180deg,
+       hsl(175 35% 35% / 0.03) 0%,
+       hsl(30 20% 98%) 100%
+     );
+     --gradient-luxury: linear-gradient(
+       135deg,
+       hsl(38 45% 72% / 0.15) 0%,
+       hsl(38 50% 85% / 0.1) 100%
+     );
+     --gradient-calm: linear-gradient(
+       180deg,
+       hsl(150 20% 88% / 0.3) 0%,
+       hsl(30 20% 98%) 100%
+     );
+     --gradient-section-fade: linear-gradient(
+       180deg,
+       transparent 0%,
+       hsl(30 20% 98% / 0.5) 50%,
+       hsl(30 20% 98%) 100%
+     );
+     
+     /* ═══ Shadows ═══ */
+     --shadow-soft: 0 4px 20px -4px hsl(200 15% 15% / 0.08);
+     --shadow-medium: 0 8px 40px -8px hsl(200 15% 15% / 0.12);
+     --shadow-glow: 0 0 60px -10px hsl(175 35% 35% / 0.15);
+     --shadow-gold: 0 0 40px -10px hsl(38 45% 72% / 0.3);
+     
+     /* ═══ Typography ═══ */
+     --font-display: 'Cormorant Garamond', serif;
+     --font-body: 'Instrument Sans', sans-serif;
+     
+     /* Sidebar (keeping defaults) */
+     --sidebar-background: 30 20% 98%;
+     --sidebar-foreground: 200 15% 15%;
+     --sidebar-primary: 175 35% 35%;
+     --sidebar-primary-foreground: 30 20% 98%;
+     --sidebar-accent: 150 20% 88%;
+     --sidebar-accent-foreground: 175 35% 30%;
+     --sidebar-border: 30 15% 88%;
+     --sidebar-ring: 175 35% 35%;
+   }
+ }
+ 
+ @layer base {
+   * {
+     @apply border-border;
+   }
+   
+   html {
+     scroll-behavior: auto; /* Lenis handles smooth scroll */
+   }
+   
+   body {
+     @apply bg-background text-foreground;
+     font-family: var(--font-body);
+     overflow-x: hidden;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+   }
+   
+   /* ═══ Typography Scale ═══ */
+   h1, h2, h3, h4, h5, h6 {
+     font-family: var(--font-display);
+     font-weight: 400;
+     letter-spacing: -0.02em;
+     line-height: 1.1;
+   }
+   
+   .heading-hero {
+     font-family: var(--font-display);
+     font-size: clamp(3.5rem, 10vw, 8rem);
+     font-weight: 300;
+     letter-spacing: 0.15em;
+     text-transform: uppercase;
+     color: hsl(var(--teal-deep));
+   }
+   
+   .heading-chapter {
+     font-family: var(--font-display);
+     font-size: clamp(2.5rem, 6vw, 4.5rem);
+     font-weight: 400;
+     letter-spacing: 0.02em;
+     color: hsl(var(--charcoal));
+   }
+   
+   .heading-section {
+     font-family: var(--font-display);
+     font-size: clamp(1.75rem, 4vw, 2.5rem);
+     font-weight: 500;
+     color: hsl(var(--teal-medium));
+   }
+   
+   .text-tagline {
+     font-family: var(--font-body);
+     font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+     font-weight: 500;
+     letter-spacing: 0.25em;
+     text-transform: uppercase;
+     color: hsl(var(--champagne));
+   }
+   
+   .text-body {
+     font-family: var(--font-body);
+     font-size: clamp(1rem, 1.5vw, 1.125rem);
+     line-height: 1.7;
+     color: hsl(var(--slate));
+   }
+   
+   .text-body-large {
+     font-family: var(--font-body);
+     font-size: clamp(1.125rem, 2vw, 1.375rem);
+     line-height: 1.6;
+     color: hsl(var(--charcoal));
+   }
+ }
+ 
+ @layer components {
+   /* ═══ Chapter Sections ═══ */
+   .chapter {
+     min-height: 100vh;
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: clamp(4rem, 10vh, 8rem) clamp(1.5rem, 5vw, 4rem);
+     overflow: hidden;
+   }
+   
+   .chapter-content {
+     max-width: 1400px;
+     width: 100%;
+     margin: 0 auto;
+   }
+   
+   /* ═══ Animated Cards ═══ */
+   .service-card {
+     background: hsl(var(--card));
+     border: 1px solid hsl(var(--border));
+     border-radius: var(--radius);
+     padding: 2rem;
+     box-shadow: var(--shadow-soft);
+     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+   }
+   
+   .service-card:hover {
+     transform: translateY(-4px);
+     box-shadow: var(--shadow-medium);
+     border-color: hsl(var(--champagne-light));
+   }
+   
+   /* ═══ Timeline ═══ */
+   .timeline-line {
+     height: 2px;
+     background: linear-gradient(
+       90deg,
+       hsl(var(--teal-medium)) 0%,
+       hsl(var(--champagne)) 100%
+     );
+     transform-origin: left center;
+   }
+   
+   .timeline-dot {
+     width: 16px;
+     height: 16px;
+     border-radius: 50%;
+     background: hsl(var(--champagne));
+     border: 3px solid hsl(var(--teal-medium));
+     box-shadow: var(--shadow-gold);
+   }
+   
+   /* ═══ Philosophy Circles ═══ */
+   .philosophy-circle {
+     width: clamp(150px, 20vw, 250px);
+     height: clamp(150px, 20vw, 250px);
+     border-radius: 50%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     border: 2px solid hsl(var(--teal-light) / 0.3);
+     backdrop-filter: blur(8px);
+   }
+   
+   .circle-restore {
+     background: linear-gradient(135deg, hsl(var(--sage-light) / 0.8), hsl(var(--sage) / 0.5));
+   }
+   
+   .circle-correct {
+     background: linear-gradient(135deg, hsl(var(--teal-light) / 0.3), hsl(var(--teal-medium) / 0.2));
+   }
+   
+   .circle-enhance {
+     background: linear-gradient(135deg, hsl(var(--champagne-light) / 0.6), hsl(var(--champagne) / 0.4));
+   }
+   
+   /* ═══ Signature Cards (Horizontal Scroll) ═══ */
+   .signature-track {
+     display: flex;
+     gap: 2rem;
+     padding: 2rem 0;
+   }
+   
+   .signature-card {
+     flex-shrink: 0;
+     width: clamp(280px, 30vw, 400px);
+     background: hsl(var(--card));
+     border-radius: calc(var(--radius) * 2);
+     padding: 2.5rem;
+     border: 1px solid hsl(var(--border));
+     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+   }
+   
+   .signature-card.active {
+     transform: scale(1.05);
+     box-shadow: var(--shadow-glow);
+     border-color: hsl(var(--teal-light));
+   }
+   
+   .signature-card:not(.active) {
+     filter: blur(1px);
+     opacity: 0.7;
+   }
+   
+   /* ═══ CTA Section ═══ */
+   .cta-glow {
+     position: absolute;
+     width: 60%;
+     height: 60%;
+     background: radial-gradient(
+       circle,
+       hsl(var(--champagne) / 0.15) 0%,
+       transparent 70%
+     );
+     border-radius: 50%;
+     filter: blur(60px);
+     pointer-events: none;
+   }
+ }
+ 
+ @layer utilities {
+   /* ═══ Animation States ═══ */
+   .will-animate {
+     will-change: transform, opacity;
+   }
+   
+   .clip-hidden {
+     clip-path: inset(0 100% 0 0);
+   }
+   
+   .clip-visible {
+     clip-path: inset(0 0 0 0);
+   }
+   
+   /* ═══ Glass Effect ═══ */
+   .glass {
+     background: hsl(var(--background) / 0.7);
+     backdrop-filter: blur(12px);
+     border: 1px solid hsl(var(--border) / 0.5);
+   }
+   
+   /* ═══ Text Gradients ═══ */
+   .text-gradient-gold {
+     background: linear-gradient(135deg, hsl(var(--champagne)), hsl(var(--champagne-light)));
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-clip: text;
+   }
+   
+   .text-gradient-teal {
+     background: linear-gradient(135deg, hsl(var(--teal-deep)), hsl(var(--teal-light)));
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-clip: text;
+   }
+ }
